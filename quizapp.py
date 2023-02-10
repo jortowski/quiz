@@ -107,8 +107,6 @@ else:
         st.title('Resultado: '+str("{:.2f}".format(mark))+' %')
       
     
- '''
-    
 
 
 
