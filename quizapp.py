@@ -31,9 +31,9 @@ df = pd.DataFrame(rows)
 st.write(df)
 
 def shuffle_answers(row):
-    correct_answer = row["Respuesta correcta"]
-    fake_answer1 = row["Respuesta falsa 1"]
-    fake_answer2 = row["Respuesta falsa 2"]
+    correct_answer = row["Respuesta_correcta"]
+    fake_answer1 = row["Respuesta_falsa_1"]
+    fake_answer2 = row["Respuesta_falsa_2"]
     answers = [correct_answer, fake_answer1, fake_answer2]
     random_answers = answers
     random.shuffle(random_answers)
@@ -70,7 +70,7 @@ if pwd == "Seaprueba":
         for i in st.session_state.ids:
             row=[df_filtered.iloc[i]][0]
             question = row["Pregunta"]
-            correct_answer = row["Respuesta correcta"]
+            correct_answer = row["Respuesta_correcta"]
             random_answers = shuffle_answers(row)
             questions.append(question)
             answers.append(random_answers)
