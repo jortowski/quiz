@@ -27,17 +27,7 @@ def run_query(query):
 
 sheet_url = st.secrets["private_gsheets_url"]
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
-
-st.write(rows)
-
-
 df = pd.DataFrame(rows)
-st.write(df["Autor"])
-
-'''
-def load_excel(file_path):
-    df = pd.read_excel(file_path)
-    return(df)
 
 def shuffle_answers(row):
     correct_answer = row["Respuesta correcta"]
@@ -52,12 +42,6 @@ st.title("HAZ OTRO TEST!")
 
 pwd = st.sidebar.text_input('Password:', value='', type='password')
 if pwd == "Seaprueba":
-    
-    window_path = 'C:/Users/C79296/OneDrive - Canal de Isabel II/ICCP/'
-    file_name = 'testing_test.xlsx'
-    file_path = window_path + file_name
-    
-    df = load_excel(file_path)
     
     all_modules = df["Módulo"].drop_duplicates()
     all_authors = df["Autor"].drop_duplicates()
