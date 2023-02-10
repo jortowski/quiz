@@ -31,6 +31,8 @@ rows = run_query(f'SELECT * FROM "{sheet_url}"')
 st.write(rows)
 st.write(rows["Autor"])
 
+df = pd.DataFrame(rows)
+
 '''
 def load_excel(file_path):
     df = pd.read_excel(file_path)
