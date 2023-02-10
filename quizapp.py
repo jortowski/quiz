@@ -5,8 +5,6 @@ import streamlit as st
 import pandas as pd
 import random
 
-API_key = 'AIzaSyBHUODg6FypRHPcdu65YYq5sbtjXihpKUA'
-
 
 def load_excel(file_path):
     df = pd.read_excel(file_path)
