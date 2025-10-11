@@ -26,7 +26,7 @@ def run_query(query):
     return rows
 
 # Obtener URL de la hoja desde secrets.toml
-sheet_url = st.secrets["private_gsheets_url"]
+sheet_url = st.secrets["gsheets"]["private_gsheets_url"]
 
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
 df = pd.DataFrame(rows)
@@ -109,6 +109,7 @@ else:
         st.title('Resultado: '+str("{:.2f}".format(mark))+' %')
       
     
+
 
 
 
