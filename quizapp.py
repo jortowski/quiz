@@ -8,13 +8,13 @@ import random
 from google.oauth2 import service_account
 from gsheetsdb import connect
 
-# Create a connection object.
+
+# Crear objeto de credenciales desde secrets.toml
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
-    scopes=[
-        "https://www.googleapis.com/auth/spreadsheets",
-    ],
+    scopes=["https://www.googleapis.com/auth/spreadsheets"],
 )
+
 conn = connect(credentials=credentials)
 
 # Perform SQL query on the Google Sheet.
@@ -25,7 +25,9 @@ def run_query(query):
     rows = rows.fetchall()
     return rows
 
+# Obtener URL de la hoja desde secrets.toml
 sheet_url = st.secrets["private_gsheets_url"]
+
 rows = run_query(f'SELECT * FROM "{sheet_url}"')
 df = pd.DataFrame(rows)
 
@@ -107,6 +109,7 @@ else:
         st.title('Resultado: '+str("{:.2f}".format(mark))+' %')
       
     
+
 
 
 
