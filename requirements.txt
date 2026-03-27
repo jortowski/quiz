@@ -1,6 +1,6 @@
 # requirements.txt
-gsheetsdb==0.1.13.1
-pyparsing==3.0.9
+# gsheetsdb==0.1.13.1
+# pyparsing==3.0.9
 streamlit
 gspread
 google-auth
